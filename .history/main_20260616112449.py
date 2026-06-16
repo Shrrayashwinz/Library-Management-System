@@ -9,31 +9,6 @@ Date: June 10, 2026
 
 """
 
-import json
-import os
-
-DATA_FILE = "data.json"
-
-# ----------- Load and Save ------------------------------
-
-def load_data():
-    if not os.path.exists(DATA_FILE):
-        return []
-
-    try:
-        with open(DATA_FILE, "r") as f:
-            return json.load(f)
-    except json.JSONDecodeError:
-        return []
-
-
-def save_data(expenses):
-    with open(DATA_FILE, "w") as f:
-        json.dump(expenses, f, indent=4)
-
-
-
-
 students = []
 
 books = []

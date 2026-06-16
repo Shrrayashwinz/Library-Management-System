@@ -9,31 +9,6 @@ Date: June 10, 2026
 
 """
 
-import json
-import os
-
-DATA_FILE = "data.json"
-
-# ----------- Load and Save ------------------------------
-
-def load_data():
-    if not os.path.exists(DATA_FILE):
-        return []
-
-    try:
-        with open(DATA_FILE, "r") as f:
-            return json.load(f)
-    except json.JSONDecodeError:
-        return []
-
-
-def save_data(expenses):
-    with open(DATA_FILE, "w") as f:
-        json.dump(expenses, f, indent=4)
-
-
-
-
 students = []
 
 books = []
@@ -53,7 +28,7 @@ def add_students():
         print("ERROR: Not a name")
         return
     
-
+    
 
 
 
@@ -80,28 +55,6 @@ def main():
         print("3. Search Student")
         print("4. Delete Student")
         print("5. Exit")
-
-        option = input("Select Option")
-
-        if option == "1":
-            pass
-   
-        elif option == "2":
-            pass
-
-        elif option == "3":
-            pass
-
-        elif option == "4":
-            pass
-
-        elif option == "5":
-            pass
-
-        else:
-            print("Invalid Choice!") 
-       
-
-
+        
 
 

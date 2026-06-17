@@ -15,10 +15,6 @@ import os
 DATA_FILE = "data.json"
 
 # ----------- Load and Save ------------------------------
-students = []
-
-books = []
-
 
 def load_data():
     if not os.path.exists(DATA_FILE):
@@ -27,7 +23,7 @@ def load_data():
     try:
         with open(DATA_FILE, "r") as f:
             return json.load(f)
-    except FileNotFoundError:    
+    except json.JSONDecodeError:
         return []
 
 
@@ -35,6 +31,12 @@ def save_data(expenses):
     with open(DATA_FILE, "w") as f:
         json.dump(expenses, f, indent=4)
 
+
+
+
+students = []
+
+books = []
 
 def load_data():
     pass
